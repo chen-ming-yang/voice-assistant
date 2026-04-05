@@ -1,0 +1,34 @@
+{
+  // === VAD ===
+  "silero-vad-model": "sherpa-onnx/silero_vad.onnx",
+
+  // === KWS (keyword spotter) ===
+  "encoder": "sherpa-onnx/sherpa-onnx-kws-zipformer-zh-en-3M-2025-12-20/encoder-epoch-13-avg-2-chunk-16-left-64.onnx",
+  "decoder": "sherpa-onnx/sherpa-onnx-kws-zipformer-zh-en-3M-2025-12-20/decoder-epoch-13-avg-2-chunk-16-left-64.onnx",
+  "joiner": "sherpa-onnx/sherpa-onnx-kws-zipformer-zh-en-3M-2025-12-20/joiner-epoch-13-avg-2-chunk-16-left-64.onnx",
+  "tokens": "sherpa-onnx/sherpa-onnx-kws-zipformer-zh-en-3M-2025-12-20/tokens.txt",
+  "keywords-file": "sherpa-onnx/sherpa-onnx-kws-zipformer-zh-en-3M-2025-12-20/test_wavs/keywords.txt",
+
+  // === ASR (streaming speech recognition) ===
+  "asr-encoder": "sherpa-onnx/sherpa-onnx-streaming-zipformer-zh-int8-2025-06-30/encoder.int8.onnx",
+  "asr-decoder": "sherpa-onnx/sherpa-onnx-streaming-zipformer-zh-int8-2025-06-30/decoder.onnx",
+  "asr-joiner": "sherpa-onnx/sherpa-onnx-streaming-zipformer-zh-int8-2025-06-30/joiner.int8.onnx",
+  "asr-tokens": "sherpa-onnx/sherpa-onnx-streaming-zipformer-zh-int8-2025-06-30/tokens.txt",
+
+  // === TTS (matcha) ===
+  "tts-acoustic-model": "sherpa-onnx/matcha-icefall-zh-baker/model-steps-3.onnx",
+  "tts-vocoder": "sherpa-onnx/vocos-22khz-univ.onnx",
+  "tts-lexicon": "sherpa-onnx/matcha-icefall-zh-baker/lexicon.txt",
+  "tts-tokens": "sherpa-onnx/matcha-icefall-zh-baker/tokens.txt",
+  "tts-dict-dir": "sherpa-onnx/matcha-icefall-zh-baker/dict",
+  "tts-rule-fsts": "sherpa-onnx/matcha-icefall-zh-baker/phone.fst,sherpa-onnx/matcha-icefall-zh-baker/date.fst,sherpa-onnx/matcha-icefall-zh-baker/number.fst",
+  "tts-volume": 2.0,
+
+  // === NLU (local llama-cli) ===
+  "nlu-llama-cli": "C:\\Users\\89488\\haha\\llama.cpp\\build\\bin\\llama-cli.exe",
+  "nlu-model": "C:\\Users\\89488\\haha\\llama.cpp\\models\\Qwen3.5-2B-Q4_K_M.gguf",
+  "nlu-llama-args": "--jinja --reasoning off --temp 1.0 --top-p 1.0 --top-k 20 --repeat-penalty 1.0 --presence-penalty 2.0",
+  "nlu-timeout-ms": 30000,
+  "nlu-n-predict": 128,
+  "nlu-prompt-prefix": "Answer briefly in one sentence: "
+}

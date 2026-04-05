@@ -1,0 +1,21 @@
+if (CMAKE_VERSION VERSION_GREATER_EQUAL "4.0.0")
+  set(CMAKE_POLICY_VERSION_MINIMUM 3.10)
+endif()
+
+cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
+cmake_policy(SET CMP0091 NEW)
+
+project(voice-assistant)
+
+set(CMAKE_CXX_STANDARD 17)
+
+# --- sherpa-onnx options (set before add_subdirectory) ---
+set(SHERPA_ONNX_ENABLE_TTS ON CACHE BOOL "" FORCE)
+set(SHERPA_ONNX_USE_STATIC_CRT OFF CACHE BOOL "" FORCE)
+set(SHERPA_ONNX_ENABLE_PORTAUDIO OFF CACHE BOOL "" FORCE)
+set(BUILD_SHARED_LIBS ON CACHE BOOL "" FORCE)
+set(BUILD_ESPEAK_NG_EXE OFF CACHE BOOL "" FORCE)
+set(SHERPA_ONNX_ENABLE_BINARY OFF CACHE BOOL "" FORCE)
+
+add_subdirectory(sherpa-onnx)
+add_subdirectory(src)
